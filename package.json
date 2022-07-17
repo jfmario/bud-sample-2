@@ -1,0 +1,12 @@
+{
+  "name": "sample2",
+  "private": true,
+  "dependencies": {
+    "livebud": "latest",
+    "svelte": "3.47.0"
+  },
+  "devDependencies": {
+    "@smui/data-table": "^6.0.0-beta.16",
+    "svelte-time": "^0.7.1"
+  }
+}
