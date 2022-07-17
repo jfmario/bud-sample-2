@@ -23,7 +23,6 @@ RUN bud build
 EXPOSE 3000
 EXPOSE 35729
 
-# nothing happens yet
 ENTRYPOINT ./bud/app --listen 0.0.0.0:3000 --log debug
 
 # docker run -it -p 3000:3000 -p 35729:35729 <image-name>
