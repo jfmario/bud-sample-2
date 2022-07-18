@@ -7,6 +7,7 @@ RUN apt-get install -y curl
 RUN curl sL https://deb.nodesource.com/setup_16.x | bash
 RUN apt-get install -y nodejs
 
+# install bud
 RUN curl -sf https://raw.githubusercontent.com/livebud/bud/main/install.sh | sh
 
 # build your app
