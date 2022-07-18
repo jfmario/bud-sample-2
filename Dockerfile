@@ -18,8 +18,6 @@ WORKDIR /app
 # will not work if you have the broken relative path in go.mod
 RUN bud build
 
-# TODO: probably remove and uninstall bud at this point
-
 EXPOSE 3000
 EXPOSE 35729
 

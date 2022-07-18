@@ -4,7 +4,13 @@
   import Time from 'svelte-time';
 </script>
 
-<h1>Widget Index</h1>
+<svelte:head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</svelte:head>
+
+<h1 class="text-3xl font-bold underline">
+  Widgets
+</h1>
 
 <p>Page load time: <Time relative timestamp={new Date()} /></p>
 
