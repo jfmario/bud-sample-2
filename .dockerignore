@@ -2,3 +2,5 @@ Dockerfile
 
 bud/
 node_modules/
+
+go.sum
