@@ -1,9 +1,5 @@
 package posts
 
-import (
-	context "context"
-)
-
 // Controller for posts
 type Controller struct {
 }
@@ -12,3 +8,9 @@ type Controller struct {
 type Post struct {
 	ID int `json:"id"`
 }
+
+func (c *Controller) Index() ([]*Post, error) {
+	return []*Post{}, nil
+}
+
+// ok

@@ -1,5 +1,5 @@
 
-FROM golang:1.18.4-buster
+FROM golang:1.18.4-buster AS build
 
 # install node & npm
 RUN apt-get update
@@ -14,12 +14,18 @@ RUN curl -sf https://raw.githubusercontent.com/livebud/bud/main/install.sh | sh
 COPY . /app
 WORKDIR /app
 
-# will not work if you have the broken relative path in go.mod
+RUN npm i
 RUN bud build
 
-EXPOSE 3000
+FROM alpine
+
+COPY --from=build /app /app
+
+ENV LOG_LEVEL=warn
+
+EXPOSE 80
 EXPOSE 35729
 
-ENTRYPOINT ./bud/app --listen 0.0.0.0:3000 --log debug
+ENTRYPOINT ./bud/app --listen 0.0.0.0:80 --log $LOG_LEVEL
 
-# docker run -it -p 3000:3000 -p 35729:35729 <image-name>
+# docker run -it -e LOG_LEVEL=debug -p 3000:3000 -p 35729:35729 <image-name>

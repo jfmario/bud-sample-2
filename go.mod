@@ -22,4 +22,3 @@ require (
 // this breaks dockerfile
 // replace github.com/livebud/bud => /home/ec2-user/bud
 
-replace github.com/livebud/bud => /home/ec2-user/bud
